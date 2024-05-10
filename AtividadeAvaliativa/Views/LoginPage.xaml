@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:AtividadeAvaliativa.ViewModels"
+             x:DataType="vm:LoginViewModel"
+             x:Class="AtividadeAvaliativa.Views.LoginPage"
+             Shell.NavBarIsVisible="False"
+             Title="LoginPage">
+
+    <StackLayout>
+        <Image Source="logo"
+               Aspect="AspectFill"
+               Margin="0,20,0,0"/>
+
+        <Label Text="LOGIN"
+               FontSize="60"
+               HorizontalOptions="Center"/>
+
+        <Label Text="CPF"
+               FontSize="35"
+               Margin="55,0,0,-10"/>
+
+        <Border WidthRequest="300"
+                HeightRequest="42"
+                Padding="20,0,0,0">
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10"/>
+            </Border.StrokeShape>
+
+            <Entry
+                   WidthRequest="300"
+                   HeightRequest="62"
+                   Keyboard="Numeric"
+                   MaxLength="14"
+                   Text="{Binding Cpf}" />
+        </Border>
+
+        <Label Text="Senha"
+               FontSize="35"
+               Margin="55,0,0,-10"/>
+
+        <Border WidthRequest="300"
+                HeightRequest="42"
+                Padding="20,0,0,0">
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10"/>
+            </Border.StrokeShape>
+
+            <StackLayout Orientation="Horizontal">
+                <Entry WidthRequest="245"
+                       HeightRequest="62"
+                       IsPassword="{Binding IsPasswordHidden}"
+                       x:Name="Password"
+                       Text="{Binding Password}" />
+
+                <ImageButton Source="eye"
+                             WidthRequest="20"
+                             x:Name="Eye"
+                             IsVisible="{Binding EyeIsVisible}"
+                             Command="{Binding ShowButtonClickedCommand}" />
+                <ImageButton Source="eye_slash"
+                             WidthRequest="20"
+                             x:Name="Eye_slash"
+                             IsVisible="{Binding EyeSlashIsVisible}"
+                             Command="{Binding ShowButtonClickedCommand}" />
+            </StackLayout>
+        </Border>
+
+        <Button WidthRequest="180"
+                HeightRequest="50"
+                Margin="0,80,0,0"
+                Text="ENTRAR"
+                FontSize="25"
+                TextColor="{StaticResource Secondary}"
+                Command="{Binding ToGoToHomePageCommand}"/>
+    </StackLayout>
+</ContentPage>

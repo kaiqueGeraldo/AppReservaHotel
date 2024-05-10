@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AtividadeAvaliativa.Views.CheckOutDetail"
+             xmlns:vm="clr-namespace:AtividadeAvaliativa.ViewModels"
+             x:DataType="vm:CheckOutDetailViewModel"
+             Title="CheckOutDetail">
+    
+    <StackLayout Spacing="10"
+                 Margin="0,50,0,0">
+        <StackLayout>
+            <Label Margin="55,0,0,-10" Text="Nome" FontSize="40"/>
+            <Border HeightRequest="40" WidthRequest="300" Padding="20,0,0,0" >
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+                <Entry Text="{Binding Cliente.Nome}"
+                       HeightRequest="60"/>
+            </Border>
+        </StackLayout>
+
+        <StackLayout>
+            <Label Margin="55,0,0,-10" Text="CPF" FontSize="40"/>
+            <Border HeightRequest="40" WidthRequest="300" Padding="20,0,0,0" >
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+                <Entry Text="{Binding Cliente.CPF}"
+                       HeightRequest="60"/>
+            </Border>
+        </StackLayout>
+
+        <StackLayout>
+            <Label Margin="55,0,0,-10" Text="Email" FontSize="40"/>
+            <Border HeightRequest="40" WidthRequest="300" Padding="20,0,0,0">
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+                <Entry Text="{Binding Cliente.Email}"
+                       HeightRequest="60"/>
+            </Border>
+        </StackLayout>
+        <StackLayout>
+            <Label Margin="55,0,0,-10" Text="Entrada" FontSize="40"/>
+            <Border HeightRequest="40" WidthRequest="300" Padding="20,0,0,0">
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+                <Entry Text="{Binding Cliente.Entrada}"
+                       HeightRequest="60"/>
+            </Border>
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AtividadeAvaliativa.Views.SettingsPage"
+             xmlns:vm="clr-namespace:AtividadeAvaliativa.ViewModels"
+             x:DataType="vm:SettingsViewModel"
+             Title="SettingsPage"
+             Shell.NavBarIsVisible="False">
+
+    <StackLayout>
+        <Label Text="CONFIGURAÇÕES"
+               FontSize="80"
+               HorizontalOptions="Center"
+               Margin="0,20,0,0"/>
+
+        <Label Margin="55,0,0,-10" Text="Valor diária R$" FontSize="40"/>
+        <Border HeightRequest="40" WidthRequest="300" Padding="20">
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10"/>
+            </Border.StrokeShape>
+            <Entry HeightRequest="60"
+                   Text="{Binding ValorDiaria}"
+                   Placeholder="{Binding ValorDiaria}"/>
+        </Border>
+
+        <Label Margin="55,0,0,-10" Text="Taxa de serviço %" FontSize="40"/>
+        <Border HeightRequest="40" WidthRequest="300" Padding="20">
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10"/>
+            </Border.StrokeShape>
+            <Entry HeightRequest="60"
+                   Text="{Binding TaxaServico}"
+                   Placeholder="{Binding TaxaServico}"/>
+        </Border>
+
+        <Button WidthRequest="219"
+                HeightRequest="60"
+                Text="CONFIRMAR"
+                FontSize="25"
+                Margin="0,320,0,0"
+                Command="{Binding DefinirValoresCommand}"/>
+    </StackLayout>
+</ContentPage>

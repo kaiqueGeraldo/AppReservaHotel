@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:AtividadeAvaliativa.ViewModels"
+             x:DataType="vm:CheckinViewModel"
+             x:Class="AtividadeAvaliativa.Views.CheckinPage"
+             Title="CheckinPage">
+    
+    <StackLayout>
+        <Border WidthRequest="160"
+                HeightRequest="160"
+                Stroke="Black"
+                StrokeThickness="2"
+                Margin="0,30">
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="80"/>
+            </Border.StrokeShape>
+            
+            <Image Source="{Binding Imagem}" WidthRequest="160"
+                   Aspect="AspectFill"/>
+
+        </Border>
+        
+            <Button ImageSource="camera_fill"
+                    WidthRequest="30"
+                    HeightRequest="30"
+                    Margin="125,-80,0,40"
+                    CornerRadius="15"
+                    Command="{Binding EscolherFotoCommand}"/>
+        
+        <Label Margin="55,0,0,-10" Text="Nome" FontSize="40"/>
+        <Border HeightRequest="40" WidthRequest="300" Padding="20">
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10"/>
+            </Border.StrokeShape>
+            <Entry Text="{Binding Nome}"
+                   HeightRequest="60"/>
+        </Border>
+        
+        <Label Margin="55,0,0,-10" Text="CPF" FontSize="40"/>
+        <Border HeightRequest="40" WidthRequest="300"  Padding=" 20">
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10"/>
+            </Border.StrokeShape>
+            <Entry Text="{Binding Cpf}"
+                   HeightRequest="60"
+                   Keyboard="Numeric"
+                   MaxLength="11"/>
+        </Border>
+        
+        <Label Margin="55,0,0,-10" Text="Email" FontSize="40"/>
+        <Border HeightRequest="40" WidthRequest="300" Padding="20" >
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10"/>
+            </Border.StrokeShape>
+            <Entry Text="{Binding Email}"
+                   HeightRequest="60"/>
+        </Border>
+        
+        <Label Margin="55,0,0,-10" Text="Entrada" FontSize="40"/>
+        <Border HeightRequest="40" WidthRequest="300" Padding="20">
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10"/>
+            </Border.StrokeShape>
+            <Entry Text="{Binding Entrada}"
+                   HeightRequest="60"/>
+        </Border>
+
+        <Button WidthRequest="219"
+                HeightRequest="60"
+                Text="CONFIRMAR"
+                FontSize="25"
+                Margin="0,40,0,0"
+                Command="{Binding SalvarCommand}"/>
+    </StackLayout>
+</ContentPage>

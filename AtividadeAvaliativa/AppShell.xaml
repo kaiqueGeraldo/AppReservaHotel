@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="AtividadeAvaliativa.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AtividadeAvaliativa"
+    xmlns:views="clr-namespace:AtividadeAvaliativa.Views"
+    Shell.FlyoutBehavior="Disabled"
+    Title="AtividadeAvaliativa">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate views:LoginPage}"
+        Route="LoginPage" />
+
+    <TabBar>
+        <Tab Title="Home" Icon="house_fill">
+            <ShellContent
+                    ContentTemplate="{DataTemplate views:HomePage}"
+                    Route="HomePage" />
+        </Tab>
+        
+        <Tab Title="Entradas" Icon="tablet_fill">
+            <ShellContent
+                    ContentTemplate="{DataTemplate views:EntradasPage}"
+                    Route="EntradasPage" />
+        </Tab>
+        
+        <Tab Title="Config" Icon="gear_fill">
+            <ShellContent
+                    ContentTemplate="{DataTemplate views:SettingsPage}"
+                    Route="SettingsPage" />
+        </Tab>
+    </TabBar>
+
+</Shell>

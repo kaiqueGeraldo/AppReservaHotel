@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AtividadeAvaliativa.Views.EntradasPage"
+             xmlns:models="clr-namespace:AtividadeAvaliativa.Models"
+             xmlns:vm="clr-namespace:AtividadeAvaliativa.ViewModels"
+             x:DataType="vm:EntradasViewModel"
+             Title="EntradasPage">
+    
+    <StackLayout>
+        <StackLayout Orientation="Vertical">
+
+            <CollectionView ItemsSource="{Binding Clientes}">
+
+                <CollectionView.ItemTemplate>
+
+                    <DataTemplate x:DataType="models:Cliente">
+                        <StackLayout Orientation="Vertical" Margin="20,0">
+                            
+                            <Label Text="{Binding CPF, StringFormat='CPF:   {0}'}"
+                                   FontSize="25"
+                                   Margin="0,0,0,-10"/>
+                            
+                            <Label Text="{Binding Entrada,StringFormat= 'Entrada:   {0}'}"
+                                   FontSize="25"/>
+                            
+                            <BoxView HeightRequest="1"/>
+                            
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type vm:EntradasViewModel}}, Path=ClienteClicadoCommand}"
+                                    CommandParameter="{Binding .}">
+                                </TapGestureRecognizer>
+
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
